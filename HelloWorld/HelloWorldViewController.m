@@ -8,22 +8,28 @@
 
 #import "HelloWorldViewController.h"
 
-@interface HelloWorldViewController ()
-
-@end
-
 @implementation HelloWorldViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+@synthesize textField=_textField;
+@synthesize label=_label;
+@synthesize userName=_userName;
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.textField) {
+        [theTextField resignFirstResponder];
+    }
+    return YES;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)changeGreeting:(id)sender {
+    self.userName = self.textField.text;
+    
+    NSString *nameString = self.userName;
+    if ([nameString length] == 0) {
+        nameString = @"Mundo";
+    }
+    NSString *greeting = [[NSString alloc] initWithFormat:@"Hola, %@!", nameString];
+    self.label.text = greeting;
 }
-
 @end

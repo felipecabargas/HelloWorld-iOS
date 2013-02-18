@@ -2,7 +2,7 @@
 //  main.m
 //  HelloWorld
 //
-//  Created by @juanpintoduran on 17-02-13.
+//  Created by A. Felipe Cabargas on 17-02-13.
 //  Copyright (c) 2013 CABARGASdotCOM. All rights reserved.
 //
 
